@@ -1,3 +1,47 @@
 * {
   border: 1px solid black;
 }
+body {
+  background-color: whitesmoke;
+}
+
+.cover {
+  background-image: url('./images/cover.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20em;
+  display: flex;
+  align-items: center;
+}
+.cover .title {
+  color: white;
+}
+.CurrentSubscription {
+  background-color: rgb(255, 106, 24);
+  height: 30em;
+  
+}
+.SubscriptionPlans {
+  padding: 0;
+  background-color: darkorange;
+  height: 30em;
+}
+.CustomerService, .PersonalInformation, .SubscriptionPlans, .CurrentSubscription {
+  margin: 10px;
+}
+.CustomerService {
+  background-color: violet;
+}
+.PersonalInformation {
+  background-color: yellowgreen; 
+}
+.PersonalInformation li {
+  line-height: 3em;
+}
+.socialIcons svg {
+  margin: 0 5px 0 5px;
+}
+.section-3 {
+  background-color: slategrey;
+}
+

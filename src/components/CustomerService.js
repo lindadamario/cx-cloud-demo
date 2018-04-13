@@ -1,28 +1,41 @@
 import React from 'react';
 import '../App.css';
-import { Row, Col } from 'react-materialize';
+import { 
+    Title,
+    Columns,
+    Image,
+    Column } from 'bloomer';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faBeer } from '@fortawesome/fontawesome-free-solid';
 
 const CustomerService = (props) => {
-    return(
-        <Row className='CustomerService'>
-            <Col s={12}>
-                <h3 className='h3'>Need Help?</h3>
-                <ul className='customerService-list'>
-                    <li>
-                        <p>Contact Us</p>
-                        <img className='logo' src={require('../images/Bill.png')} alt='' />
-                    </li>
-                    <li>
-                        <p>Chat with Us</p>
-                        <img className='logo' src={require('../images/Bill.png')} alt='' />
-                    </li>
-                    <li>
-                        <p>FAQ</p>
-                        <img className='logo' src={require('../images/Bill.png')} alt='' />
-                    </li>
-                </ul>
-            </Col>
-        </Row>
+    
+    return(        
+        <Column className="CustomerService">
+            <Columns>
+                <Column hasTextAlign='centered'>
+                    <Image isSize="640x120" src={require('../images/image-1.jpg')} />
+                </Column>
+            </Columns>
+            <Columns>
+                <Column hasTextAlign='centered'>
+                    <Columns display="inline-flex">
+                        <Column isSize='1/3' isColor='warning' hasTextAlign='centered'>
+                            <Title isSize="4">Chat with Us</Title>
+                            <FontAwesomeIcon color="gold" size="4x" icon={faBeer} />
+                        </Column>
+                        <Column isSize='1/3' isColor='warning' hasTextAlign='centered'>
+                            <Title isSize="4">Call Us</Title>
+                            <FontAwesomeIcon color="gold" size="4x" icon={faBeer} />
+                        </Column>
+                        <Column isSize='1/3' isColor='warning' hasTextAlign='centered'>
+                            <Title isSize="4">FAQ</Title>
+                            <FontAwesomeIcon color="gold" size="4x" icon={faBeer} />
+                        </Column>
+                    </Columns>
+                </Column>
+            </Columns>
+        </Column>
     );
 }
 

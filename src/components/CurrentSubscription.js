@@ -1,59 +1,36 @@
 import React from 'react';
 import '../App.css';
 import { 
-    Container, 
-    Box, 
-    Notification, 
-    Nav,
-    HeroBody,
-    TabList,
-    Button,
-    Section,
     Title,
     Columns,
-    Column,
-    Tile
+    Column
   } from 'bloomer';
-  
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faBeer } from '@fortawesome/fontawesome-free-solid';
+
 
 const CurrentSubscription = (props) => {
     const currentSubscription = '1GB Internet / Month';
     const price = '15,99';
 
     return (
-        <Columns>
-            <Column isSize='2/3' isColor='warning' hasTextAlign='centered'>
-                <Title isSize="2">Title</Title>
-                <p>fdsfdsvfdgfbvcbfd</p>
-                <p>fdsfdsvfdgfbvcbfd</p>
-                <p>fdsfdsvfdgfbvcbfd</p>
-                <p>fdsfdsvfdgfbvcbfd</p>
-                <p>fdsfdsvfdgfbvcbfd</p>
-                <p>fdsfdsvfdgfbvcbfd</p>
-            </Column>
-            <Column>
-                <Columns>
-                    <Column isColor='warning' hasTextAlign='centered'>
-                        <Title isSize="4">Title</Title>
-                        <p>fdsfdsvfdgfbvcbfd</p>
+        
+            <Column className="CurrentSubscription" isSize='2/3' hasTextAlign='centered'>
+                <Title isSize="1">Title</Title>
+                <Columns className="subCurrentSubscription">
+                    <Column hasTextAlign='centered'>
+                        <Title isSize="3">{currentSubscription}</Title>
                     </Column>
-                    <Column isColor='warning' hasTextAlign='centered'>
-                        <Title isSize="4">Title</Title>
-                        <p>fdsfdsvfdgfbvcbfd</p>
+                    <Column hasTextAlign='centered'>
+                    <FontAwesomeIcon color="gold" size="8x" icon={faBeer} />
+                    </Column>
+                    <Column hasTextAlign='centered'>
+                        <Title isSize="3">{price}</Title>
                     </Column>
                 </Columns>
-                <Columns>
-                    <Column isColor='warning' hasTextAlign='centered'>
-                        <Title isSize="4">Title</Title>
-                        <p>fdsfdsvfdgfbvcbfd</p>
-                    </Column>
-                    <Column isColor='warning' hasTextAlign='centered'>
-                        <Title isSize="4">Title</Title>
-                        <p>fdsfdsvfdgfbvcbfd</p>
-                    </Column>
-                </Columns>
+                <p isSize="4">See other Subscriptions</p>
             </Column>
-        </Columns>
+        
     );
 }
 
