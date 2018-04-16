@@ -16,19 +16,25 @@ const CurrentSubscription = (props) => {
     return (
         
             <Column className="CurrentSubscription" isSize='2/3' hasTextAlign='centered'>
-                <Title isSize="1">Title</Title>
-                <Columns className="subCurrentSubscription">
-                    <Column hasTextAlign='centered'>
-                        <Title isSize="3">{currentSubscription}</Title>
-                    </Column>
-                    <Column hasTextAlign='centered'>
-                    <FontAwesomeIcon color="gold" size="8x" icon={faBeer} />
-                    </Column>
-                    <Column hasTextAlign='centered'>
-                        <Title isSize="3">{price}</Title>
+                <Columns >
+                    <Column>
+                        <Title isSize="1">Title</Title>
+                        <Columns className="subCurrentSubscription">
+                            <Column hasTextAlign='centered'>
+
+                                <Title isSize="3">{currentSubscription}</Title>
+                            </Column>
+                            <Column hasTextAlign='centered'>
+                            <FontAwesomeIcon color="gold" size="8x" icon={faBeer} />
+                            </Column>
+                            <Column hasTextAlign='centered'>
+                                <Title isSize="3">{price}</Title>
+                            </Column>
+                        </Columns>
+                        <p isSize="4">See other Subscriptions</p>
+                    
                     </Column>
                 </Columns>
-                <p isSize="4">See other Subscriptions</p>
             </Column>
         
     );

@@ -1,8 +1,11 @@
-* {
+/* * {
   border: 1px solid black;
-}
+} */
 body {
   background-color: whitesmoke;
+}
+.root-container {
+  margin: 0!important;
 }
 
 .cover {
@@ -16,10 +19,21 @@ body {
 .cover .title {
   color: white;
 }
+.subCurrentSubscription div {
+  margin: auto;
+}
 .CurrentSubscription {
   background-color: rgb(255, 106, 24);
   height: 30em;
-  
+}
+.CurrentSubscription title {
+  margin: auto;
+  padding-bottom: 20px;
+}
+.SubscriptionPlans, .CurrentSubscription {
+  display: flex!important;
+  flex-direction: column!important;
+  justify-content: center!important;
 }
 .SubscriptionPlans {
   padding: 0;

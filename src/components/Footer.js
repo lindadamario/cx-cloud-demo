@@ -3,8 +3,7 @@ import 'bulma/css/bulma.css';
 import { 
   Column,
   Columns,
-  Section,
-  Icon
+  Section
 } from 'bloomer';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faBeer } from '@fortawesome/fontawesome-free-solid';

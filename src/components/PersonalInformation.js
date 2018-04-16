@@ -2,11 +2,7 @@ import React from 'react';
 import '../App.css';
 import { 
     Title,
-    Columns,
-    Image,
     Column } from 'bloomer';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faBeer } from '@fortawesome/fontawesome-free-solid';
 
 const userApi = {
     data: {
