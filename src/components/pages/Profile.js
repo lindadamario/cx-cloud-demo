@@ -6,102 +6,124 @@ import {
     Control,
     Input,
     Checkbox,
-    Title
+    Title,
+    Select,
+    Label,
+    Button
   } from 'bloomer';
-import { Select } from 'bloomer/lib/elements/Form/Select';
-import { Button } from 'bloomer/lib/elements/Button';
 
 class Profile extends Component {
-    state = { 
-        fullname: 'linda',
-        email: '',
-        phoneNumber: '',
-        birthday: '', 
-        address: '',
-        city: '',
-        country: '',
-        clientType: ''
-    }
-
-    // onSubmit = () => {
-    //     this.setState()
-    // }
+    
+    constructor() {
+        super();
 
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+      }
+    
+        handleChange(event) {
+            const name = event.target.name;
+            const value = event.target.value;
+            this.setState({
+            },() => {
+            }) 
+        }
+
+        handleSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                body: (data),
+            })
+                .then(res => res.json())
+                .then(data => {
+                console.log('This data was successfully received by the server:');
+                console.log(data.form);
+                });
+            }
+        
 
     render() {
-        const { 
-            fullname,
-            email,
-            phoneNumber,
-            birthday, 
-            address,
-            city,
-            country,
-            clientType
-        } = this.state;
-
+        
         return(
             <Column>
                 <Title>Profile page</Title>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <Field>  
                         <label className="fullname">Fullname</label>
                         <Control>
-                            <Input value={fullname} placeholder="Text input" />
+                            <Input
+                            ref='fistname' 
+                            onChange={this.handleChange}
+                            name="fullname" 
+                            type="text" />
                         </Control>
-                        <p>You submitted: </p>             
+                              
                     </Field>
                     <Field>  
                         <label className="email">Email</label>
                         <Control>
-                            <Input placeholder="Text input" />
+                            <Input name="email" type="text" />
                         </Control>     
-                        <p>You submitted: </p>          
+                        
                     </Field>
                     <Field>  
                         <label className="phoneNumber">Phone Number</label>
                         <Control>
-                            <Input placeholder="Text input" />
+                            <Input name="phoneNumber" type="text" />
                         </Control>    
-                        <p>You submitted: </p>           
+                        
                     </Field>
                     <Field>  
                         <label className="birthday">Birthday</label>
                         <Control>
-                            <Input placeholder="Text input" />
+                            <Input name="birthday" type="text" />
                         </Control> 
-                        <p>You submitted: </p>              
+                                 
                     </Field>
                     <Field>  
                         <label className="address">Address</label>
                         <Control>
-                            <Input placeholder="Text input" />
+                            <Input name="address" type="text" />
                         </Control>  
-                        <p>You submitted: </p>             
+                               
                     </Field>
                     <Field>  
                         <label className="city">City</label>
                         <Control>
-                            <Input placeholder="Text input" />
+                            <Input name="city" type="text" />
                         </Control> 
-                        <p>You submitted: </p>              
+                             
                     </Field>
                     <Field>  
                         <label className="country">Country</label>
                         <Control>
-                            <Input placeholder="Text input" />
+                            <Input name="country" type="text" />
                         </Control> 
-                        <p>You submitted: </p>              
+                    </Field>
+                    <Field>
+                        <Label>Select Gender:</Label>
+                        <Control>
+                            <Select 
+                                name='gender'
+                                onChange={this.handleChange}>
+
+                                <option name="gender" type="radio" value='male'>Male</option>
+                                <option name="gender" type="radio" value='female'>Female</option>
+                            </Select>
+                        </Control>
                     </Field>
                     <Field>  
                         <label className="clientType">Client Type</label>
                         <Control>
-                            <Input placeholder="Text input" />
+                            <Input name="clientType" type="text" />
                         </Control> 
-                        <p>You submitted: </p>              
+                                     
                     </Field>
-                    <Button>Submit</Button>
+                    <Button type='submit'>Submit</Button>
                 </form>
             </Column>
         );
