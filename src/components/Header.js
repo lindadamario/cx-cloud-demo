@@ -8,21 +8,22 @@ import {
   NavbarLink,
   NavbarStart
   } from 'bloomer';
+import { Link } from 'react-router-dom'
 
 
 const Header = (props) => {
   const userName = 'Linda';
 
   return (
-      <NavbarMenu>
+    <NavbarMenu>
         <NavbarStart>
-          <NavbarItem href='#/'>Home</NavbarItem>
-          <NavbarItem href='#/'>About</NavbarItem>
-          <NavbarItem href='#/'>Subs</NavbarItem>
-          <NavbarItem hasDropdown isHoverable>
-            <NavbarLink href='#/documentation'>Documentation</NavbarLink>  
+          <NavbarItem>
+            <Link to='/'>Home</Link>       
           </NavbarItem>
-        </NavbarStart>
+          <NavbarItem href='/profile'>
+            <Link to='/profile'>Profile</Link>
+          </NavbarItem> 
+          </NavbarStart>
         <NavbarEnd>
           <NavbarItem>
             <Button href="">
@@ -31,6 +32,8 @@ const Header = (props) => {
           </NavbarItem>
         </NavbarEnd>
       </NavbarMenu>
+    
+      
   );
 }
 
