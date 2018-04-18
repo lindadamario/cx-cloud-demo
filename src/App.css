@@ -30,7 +30,7 @@ body {
   margin: auto;
   padding-bottom: 20px;
 }
-.SubscriptionPlans, .CurrentSubscription {
+.SubscriptionPlans, .CurrentSubscription, .PersonalInformation {
   display: flex!important;
   flex-direction: column!important;
   justify-content: center!important;

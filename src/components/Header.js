@@ -23,6 +23,9 @@ const Header = (props) => {
           <NavbarItem href='/profile'>
             <Link to='/profile'>Profile</Link>
           </NavbarItem> 
+          <NavbarItem href='/profile'>
+            <Link to='/login'>Login</Link>
+          </NavbarItem> 
           </NavbarStart>
         <NavbarEnd>
           <NavbarItem>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Profile from './pages/Profile';
-import Cover from './Cover';
+import Login from './pages/Login';
 
 
 const Main = () => (
@@ -10,7 +10,7 @@ const Main = () => (
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route path='/profile' component={Profile}/>
-        <Route path='/cover' component={Cover}/>
+        <Route path='/login' component={Login}/>
       </Switch>
     </main>
   )
